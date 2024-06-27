@@ -6,7 +6,7 @@ const isLocalhost = Boolean(
   )
 );
 
-function register(config) {
+export function register(config) {
   if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
     const publicUrl = new URL(process.env.PUBLIC_URL, window.location.href);
     if (publicUrl.origin !== window.location.origin) {
@@ -93,7 +93,7 @@ function checkValidServiceWorker(swUrl, config) {
     });
 }
 
-function unregister() {
+export function unregister() {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.ready
       .then(registration => {
@@ -104,5 +104,3 @@ function unregister() {
       });
   }
 }
-
-export { register, unregister };
